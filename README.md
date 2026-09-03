@@ -1,5 +1,7 @@
 # OutSlide MCP
 
+[![AllMCPs Verified](https://allmcps.com/api/badge/outslide-mcp?style=shield)](https://allmcps.com/mcp/outslide-mcp)
+
 OutSlide exposes a public, rate-limited MCP preview for planning slide decks from
 a topic or inline CSV/JSON. The preview returns a structured 3–8 slide outline
 and a `continue_url` for building the presentation in the OutSlide web workspace.
