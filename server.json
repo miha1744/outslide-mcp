@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.miha1744/outslide",
+  "title": "OutSlide",
+  "description": "Preview slide-deck outlines from a topic or inline CSV/JSON, then continue creation in OutSlide.",
+  "version": "0.1.0",
+  "websiteUrl": "https://outslide.ai/mcp",
+  "repository": {
+    "url": "https://github.com/miha1744/outslide-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://outslide.ai/api/x402/mcp"
+    }
+  ]
+}
