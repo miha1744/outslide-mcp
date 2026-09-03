@@ -39,6 +39,8 @@ Ask your MCP client:
 > affects onboarding. Include the research question, method, findings,
 > limitations, and contribution.
 
+Prefer the browser? [Preview a personalized thesis-defense outline](https://outslide.ai/templates/thesis-defense/?utm_source=github&utm_medium=mcp_repository&utm_campaign=mcp_preview_launch&utm_content=thesis-readme&cohort=thesis_research&test_id=mcp_readme_thesis) with no account or card, then continue it in OutSlide.
+
 You can also pass inline CSV or JSON with `data`, set `data_format`, choose
 `n_slides` from 3 to 8, and select a supported `language`.
 
