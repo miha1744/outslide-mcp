@@ -1,0 +1,47 @@
+name: Publish MCP metadata
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out discovery metadata
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+
+      - name: Verify the hosted MCP endpoint
+        run: |
+          curl --fail --silent --show-error \
+            --header 'Accept: application/json, text/event-stream' \
+            --header 'Content-Type: application/json' \
+            --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"outslide-registry-publisher","version":"1"}}}' \
+            https://outslide.ai/api/x402/mcp \
+            | grep --fixed-strings '"name":"outslide"'
+
+      - name: Install the pinned MCP publisher
+        env:
+          PUBLISHER_VERSION: v1.8.1
+        run: |
+          base="https://github.com/modelcontextprotocol/registry/releases/download/${PUBLISHER_VERSION}"
+          curl --fail --location --silent --show-error \
+            --output mcp-publisher.tar.gz \
+            "${base}/mcp-publisher_linux_amd64.tar.gz"
+          curl --fail --location --silent --show-error \
+            --output checksums.txt \
+            "${base}/registry_1.8.1_checksums.txt"
+          grep 'mcp-publisher_linux_amd64.tar.gz$' checksums.txt \
+            | sed 's#mcp-publisher_linux_amd64.tar.gz#mcp-publisher.tar.gz#' \
+            | sha256sum --check --strict
+          tar --extract --gzip --file mcp-publisher.tar.gz mcp-publisher
+
+      - name: Publish to the official MCP Registry
+        run: |
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish server.json
