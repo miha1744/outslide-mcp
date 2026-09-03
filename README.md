@@ -1,10 +1,14 @@
-# OutSlide MCP
+# OutSlide MCP — AI Presentation Outline Generator for Codex and Claude
 
 [![AllMCPs Verified](https://allmcps.com/api/badge/outslide-mcp?style=shield)](https://allmcps.com/mcp/outslide-mcp)
 
-OutSlide exposes a public, rate-limited MCP preview for planning slide decks from
-a topic or inline CSV/JSON. The preview returns a structured 3–8 slide outline
-and a `continue_url` for building the presentation in the OutSlide web workspace.
+OutSlide is a hosted Model Context Protocol (MCP) server for planning AI
+presentations in Codex, Claude, and other Streamable HTTP MCP clients. Give it a
+topic or inline CSV/JSON and it returns a structured 3–8 slide outline plus a
+`continue_url` for building the presentation in the OutSlide web workspace.
+
+Use it to plan a thesis defense, sales deck, lesson presentation, or a data
+story from CSV without installing a package or creating an API key.
 
 The public MCP endpoint currently exposes one tool:
 
