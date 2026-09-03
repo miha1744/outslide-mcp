@@ -50,7 +50,7 @@ Do not submit confidential or personal data to the public preview.
 
 ## Links
 
-- [OutSlide MCP setup](https://outslide.ai/mcp?utm_source=github&utm_medium=mcp_repository&utm_campaign=mcp_preview_launch)
+- [OutSlide MCP setup](https://outslide.ai/mcp?utm_source=github&utm_medium=mcp_repository&utm_campaign=mcp_preview_launch&utm_content=readme_setup&cohort=agent&test_id=mcp_repo_setup)
 - [Public discovery manifest](https://outslide.ai/.well-known/mcp.json)
 - [Official MCP Registry entry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.miha1744%2Foutslide)
 - [Smithery listing](https://smithery.ai/servers/kapper3228/outslide)
