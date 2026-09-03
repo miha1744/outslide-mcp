@@ -3,7 +3,7 @@
   "name": "io.github.miha1744/outslide",
   "title": "OutSlide",
   "description": "Preview slide-deck outlines from a topic or inline CSV/JSON, then continue creation in OutSlide.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://outslide.ai/mcp",
   "repository": {
     "url": "https://github.com/miha1744/outslide-mcp",
