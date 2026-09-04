@@ -1,14 +1,18 @@
-# OutSlide MCP — AI Presentation Outline Generator for Codex and Claude
+# OutSlide Creative Workspace | MCP for Codex and Claude Code
 
 [![AllMCPs Verified](https://allmcps.com/api/badge/outslide-mcp?style=shield)](https://allmcps.com/mcp/outslide-mcp)
 
-OutSlide is a hosted Model Context Protocol (MCP) server for planning AI
-presentations in Codex, Claude, and other Streamable HTTP MCP clients. Give it a
-topic or inline CSV/JSON and it returns a structured 3–8 slide outline plus a
-`continue_url` for building the presentation in the OutSlide web workspace.
+OutSlide is an AI creative workspace for images, video, music, audio and presentations.
+This repository documents its public MCP connector for Codex and Claude Code.
 
-Use it to plan a thesis defense, sales deck, lesson presentation, or a data
-story from CSV without installing a package or creating an API key.
+Create and reuse assets in one workspace. Choose an available model and review the
+credit cost before generation.
+
+**Available through this public MCP connector today:** preview a 3–8 slide outline
+from a topic or inline CSV/JSON, then continue the presentation in OutSlide. Image,
+video and audio creation happen in the signed-in web workspace, not through this
+MCP endpoint. The preview returns structured slide titles and briefs plus a
+`continue_url` for the next step.
 
 The public MCP endpoint currently exposes one tool:
 
@@ -18,24 +22,20 @@ It does **not** claim to generate PPTX or PDF files through MCP yet.
 
 ## Connect
 
-Codex CLI:
+### Codex
 
 ```sh
 codex mcp add outslide --url https://outslide.ai/api/x402/mcp
 ```
 
-Any Streamable HTTP MCP client:
+### Claude Code
 
-```json
-{
-  "mcpServers": {
-    "outslide": {
-      "type": "streamable-http",
-      "url": "https://outslide.ai/api/x402/mcp"
-    }
-  }
-}
+```sh
+claude mcp add --transport http outslide https://outslide.ai/api/x402/mcp
 ```
+
+These are CLI commands, not Claude Desktop configuration. Other clients must
+support remote Streamable HTTP and use their own connector setup instructions.
 
 ## Try it
 
