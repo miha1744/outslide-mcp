@@ -3,10 +3,31 @@
 [![AllMCPs Verified](https://allmcps.com/api/badge/outslide-mcp?style=shield)](https://allmcps.com/mcp/outslide-mcp)
 
 OutSlide is an AI creative workspace for images, video, music, audio and presentations.
-This repository documents its public MCP connector for Codex and Claude Code.
+This repository documents account-linked image creation and the separate public
+outline connector for Codex and Claude Code.
 
 Create and reuse assets in one workspace. Choose an available model and review the
 credit cost before generation.
+
+## Create images through your account
+
+Connect your OutSlide account, choose an available image model, and review the
+credit quote before generation. Set a spending limit for the connection and
+revoke access when needed. Generated images are saved in your OutSlide workspace
+for download and reuse.
+
+[Set up image creation](https://outslide.ai/mcp?utm_source=github&utm_medium=referral&utm_campaign=mcp_image_launch&utm_content=readme&test_id=mcp_image_01)
+
+The account-linked endpoint is `https://outslide.ai/api/mcp`. Follow the Settings
+instructions linked above to grant image access with a credit cap and expiry.
+It is separate from the anonymous outline endpoint documented below.
+
+The account-linked image workflow has been verified in production through HTTP
+MCP. Codex CLI model discovery and quotes have been checked; Claude Code has not
+yet been independently tested. This does not claim that every creative format
+has an end-to-end verified MCP workflow.
+
+## Public outline preview
 
 **Available through this public MCP connector today:** preview a 3–8 slide outline
 from a topic or inline CSV/JSON, then continue the presentation in OutSlide. Image,
@@ -20,7 +41,7 @@ The public MCP endpoint currently exposes one tool:
 
 It does **not** claim to generate PPTX or PDF files through MCP yet.
 
-## Connect
+## Connect to the public outline preview
 
 ### Codex
 
@@ -37,7 +58,7 @@ claude mcp add --transport http outslide https://outslide.ai/api/x402/mcp
 These are CLI commands, not Claude Desktop configuration. Other clients must
 support remote Streamable HTTP and use their own connector setup instructions.
 
-## Try it
+## Try the public outline preview
 
 Ask your MCP client:
 
